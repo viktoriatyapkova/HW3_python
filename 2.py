@@ -4,3 +4,16 @@ b = [] #новый писок, куда будут поступать элеме
 for i in range (n): # столько элементов будет добавляться в  наш новый список
     b.append(str(a[i]))
 print (''.join(b))
+
+правильное выполнение: 
+    def seq(n, s='0'): 
+        if n==0:
+            return ''
+        if n <= len(s):
+            return s[:n]
+        for i in range(len(s)):
+            if s[i] == '0':
+                s += '1'
+            else:
+                s+= '0'
+        return seq(n, s)
